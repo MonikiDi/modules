@@ -1,8 +1,8 @@
 import 'regenerator-runtime/runtime';
-import {API_URL, URL_COMICS } from './constans/api';
-import { getDataApi } from './utils/getDataApi';
+import App from './components/App/App';
+
+
 
 (async () => {
-    const data = await getDataApi.getData(API_URL + URL_COMICS);
-    console.log(data);
+   await App.render();
 })();
