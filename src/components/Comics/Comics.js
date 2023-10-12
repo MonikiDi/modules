@@ -1,4 +1,4 @@
-import { API_URL, IMG_STANDART_XLARGE, URL_COMICS } from '../../constans/api.js';
+import { API_URL, IMG_STANDART_XLARGE, URL_COMICS, IMG_NOT_AVALILABLE } from '../../constans/api.js';
 import { getDataApi } from '../../utils/getDataApi.js';
 import { ROOT_INDEX } from '../../constans/root.js';
 import './Comics.css';
@@ -11,13 +11,16 @@ class Comics {
         let htmlContent = '';
 
         data.forEach(({ id, title, thumbnail: { extension, path } }) => {
-            const imgSrc = path + '/' + IMG_STANDART_XLARGE + '.' + extension;
-            htmlContent += `
+
+            if (path.lastIndexOf(IMG_NOT_AVALILABLE) === -1) {
+                const imgSrc = path + '/' + IMG_STANDART_XLARGE + '.' + extension;
+                htmlContent += `
             <li>
                 <span>${title}</span>
                 <img src="${imgSrc}" />
             </li>
             `
+            }
         })
 
         const htmlWrapper = `
