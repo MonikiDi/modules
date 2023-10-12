@@ -1,8 +1,8 @@
 import { API_URL, IMG_STANDART_XLARGE, URL_COMICS, IMG_NOT_AVALILABLE, URL_CHARACTERS } from '../../constans/api.js';
 import { getDataApi } from '../../utils/getDataApi.js';
 import { ROOT_INDEX } from '../../constans/root.js';
-import './Comics.css';
-import App from '../App/App.js';
+import styles from './Comics.css';
+
 
 class Comics {
 
@@ -16,16 +16,16 @@ class Comics {
                 const url = API_URL + URL_COMICS + '/' + id + '/' + URL_CHARACTERS;
 
                 htmlContent += `
-                    <li class="comics__item" data-uri="${url}">
-                        <span class="comics__name">${title}</span>
-                        <img class="comics__img" src="${imgSrc}" />
+                    <li class="comics__item ${styles.comics__item}" data-uri="${url}">
+                        <span class="${styles.comics__name}">${title}</span>
+                        <img class="img_contain ${styles.comics__img}" src="${imgSrc}" />
                     </li>
                     `
             }
         })
 
         const htmlWrapper = `
-            <ul class="comics__container">
+            <ul class="${styles.comics__container}">
                 ${htmlContent}
             </ul>
         `
