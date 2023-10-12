@@ -1,13 +1,11 @@
-import { API_URL, URL_COMICS } from '../../constans/api.js';
-import { getDataApi } from '../../utils/getDataApi.js';
+import Comics from '../Comics/Comics';
 
 import './App.css';
 
 class App {
 
     async render() {
-        const data = await getDataApi.getData(API_URL + URL_COMICS);
-        console.log(data);
+        await Comics.render();
     }
 }
 
