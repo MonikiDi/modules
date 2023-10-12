@@ -15,16 +15,16 @@ class Comics {
             if (path.lastIndexOf(IMG_NOT_AVALILABLE) === -1) {
                 const imgSrc = path + '/' + IMG_STANDART_XLARGE + '.' + extension;
                 htmlContent += `
-            <li>
-                <span>${title}</span>
-                <img src="${imgSrc}" />
+            <li class="comics__item">
+                <span class="comics__name">${title}</span>
+                <img class="comics__img" src="${imgSrc}" />
             </li>
             `
             }
         })
 
         const htmlWrapper = `
-            <ul>
+            <ul class="comics__container">
                 ${htmlContent}
             </ul>
         `
