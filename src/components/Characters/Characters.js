@@ -1,7 +1,10 @@
 import { getDataApi } from '../../utils/getDataApi.js';
 import { IMG_STANDART_XLARGE } from '../../constans/api';
 import { ROOT_MODAL} from '../../constans/root.js';
+import imgCloseWhite from './img/close-white.svg';
+
 import styles from './Characters.css';
+
 
 class Characters {
     renderContent(data) {
@@ -22,9 +25,13 @@ class Characters {
             <ul class="${styles.characters__container}">
                 ${htmlContent}
             </ul>
+            <button 
+                class="${styles.characters__close}"
+                onclick="modal.innerHTML = ''"
+                style="background-image: url(${imgCloseWhite})"
+                ></button>
         </div>
         `;
-
         ROOT_MODAL.innerHTML = htmlWrapper;
     }
 
