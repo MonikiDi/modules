@@ -2,6 +2,7 @@ import { API_URL, IMG_STANDART_XLARGE, URL_COMICS, IMG_NOT_AVALILABLE, URL_CHARA
 import { getDataApi } from '../../utils/getDataApi.js';
 import { ROOT_INDEX } from '../../constans/root.js';
 import Error from '../Error/Error.js';
+import Characters from '../Characters/Characters.js';
 
 import styles from './Comics.css';
 
@@ -18,7 +19,7 @@ class Comics {
                 htmlContent += `
                     <li class="comics__item ${styles.comics__item}" data-uri="${url}">
                         <span class="${styles.comics__name}">${title}</span>
-                        <img class="img_contain ${styles.comics__img}" src="${imgSrc}" />
+                        <img class="${styles.comics__img}" src="${imgSrc}" />
                     </li>
                     `
             }
@@ -40,10 +41,10 @@ class Comics {
 
     eventListener() {
         document.querySelectorAll('.comics__item').forEach(element => {
-            const url = element.getAttribute('data-uri');
+            const uri = element.getAttribute('data-uri');
 
             element.addEventListener('click', () => {
-                console.log(url);
+                Characters.render(uri);
             })
         })
     }
