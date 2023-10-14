@@ -1,4 +1,4 @@
-import { API_URL, IMG_STANDART_XLARGE, URL_COMICS, IMG_NOT_AVALILABLE, URL_CHARACTERS } from '../../constans/api.js';
+import { API_URL, IMG_STANDART_XLARGE, URL_COMICS, IMG_NOT_AVALILABLE, URL_CHARACTERS, API_KEY } from '../../constans/api.js';
 import { getDataApi } from '../../utils/getDataApi.js';
 import { ROOT_INDEX } from '../../constans/root.js';
 import Error from '../Error/Error.js';
